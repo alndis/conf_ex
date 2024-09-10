@@ -13,7 +13,7 @@ npm show express
 ![image](https://github.com/user-attachments/assets/818bdea8-17c2-4245-aa2c-c70d3d6bb77e)
 
 # Задание №3
-Создадим файл md.dot ed.dot с указанием зависимостей между библиотеками
+Создадим файл md.dot и ed.dot с указанием зависимостей между библиотеками
 ```bash
 digraph G {
     rankdir=LR;
