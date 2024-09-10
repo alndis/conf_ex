@@ -65,3 +65,13 @@ digraph G {
 }
 ```
  Генерация графика для matplotlib
+ ```bash
+$ dot -Tpng md.dot -o matplotlib_dependencies.png
+```
+![matplotlib_dependencies](https://github.com/user-attachments/assets/15cea608-bae9-48fb-8000-d300fe03473d)
+
+ Генерация графика для express
+ ```bash
+$ dot -Tpng ed.dot -o express_dependencies.png
+```
+![express_dependencies](https://github.com/user-attachments/assets/cfebff75-21c5-4c6b-9541-b9d105fe2ef6)
