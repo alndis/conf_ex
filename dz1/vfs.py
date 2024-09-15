@@ -6,7 +6,7 @@ import platform
 
 class VFS:
     def __init__(self, zip_path):
-        self.fs_path = '/tmp/vfs'
+        self.fs_path = '/alndis/vfs'
         self.extract_zip(zip_path)
         self.current_path = self.fs_path
         self.log_file = 'vfs_log.csv'
