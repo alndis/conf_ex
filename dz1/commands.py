@@ -6,6 +6,9 @@ def execute_command(vfs, command):
         print("\n".join(vfs.list_files()))
         
     elif cmd == "cd":
+        if parts[1] == '..' and vfs.current_path == vfs.fs_path:
+            print("You cannot exit the archive directory.")
+            return
         if len(parts) > 1:
             vfs.change_directory(parts[1])
         else:
