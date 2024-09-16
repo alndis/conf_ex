@@ -75,3 +75,21 @@ $ dot -Tpng md.dot -o matplotlib_dependencies.png
 $ dot -Tpng ed.dot -o express_dependencies.png
 ```
 ![express_dependencies](https://github.com/user-attachments/assets/cfebff75-21c5-4c6b-9541-b9d105fe2ef6)
+# Задание №4
+```bash
+include "alldifferent.mzn";
+
+var 1..9: d1;  
+var 0..9: d2; 
+var 0..9: d3; 
+var 0..9: d4; 
+var 0..9: d5;  
+var 0..9: d6; 
+
+constraint alldifferent([d1, d2, d3, d4, d5, d6]);
+
+constraint d1 + d2 + d3 = d4 + d5 + d6;
+
+solve minimize d1 + d2 + d3; 
+```
+![image](https://github.com/user-attachments/assets/1fa59667-fffd-4374-a629-8467fb04d00c)
