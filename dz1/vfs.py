@@ -35,10 +35,23 @@ class VFS:
             if os.path.isdir(new_path):
                 self.current_path = new_path
             else:
-                print(f"cd: no such file or directory: {path}")
+                return f"cd: no such file or directory: {path}"
         with open(self.log_file, 'a', newline='') as csvfile:
             log_writer = csv.writer(csvfile)
             log_writer.writerow([f"cd {path}", self.current_path])
+        return None
+
+    def execute_rmdir(self, vfs, path):
+        try:
+            os.rmdir(os.path.join(vfs.current_path, path))
+            with open(self.log_file, 'a', newline='') as csvfile:
+                log_writer = csv.writer(csvfile)
+                log_writer.writerow([f"rmdir {path}", self.current_path])
+            return None
+        except FileNotFoundError:
+            return f"Directory '{path}' not found"
+        except OSError as e:
+            return f"Error removing directory '{path}': {e}"
 
     def read_file(self, file_path):
         with open(file_path, 'r') as f:
@@ -60,13 +73,3 @@ class VFS:
             log_writer = csv.writer(csvfile)
             log_writer.writerow([f"uname"])
 
-    def execute_rmdir(self,vfs, path):
-        try:
-            os.rmdir(os.path.join(vfs.current_path, path))
-            with open(self.log_file, 'a', newline='') as csvfile:
-                log_writer = csv.writer(csvfile)
-                log_writer.writerow([f"rmdir {path}", self.current_path])
-        except FileNotFoundError:
-            print(f"Directory '{path}' not found")
-        except OSError as e:
-            print(f"Error removing directory '{path}': {e}")
