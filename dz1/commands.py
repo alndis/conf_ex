@@ -3,24 +3,42 @@ def execute_command(vfs, command):
     cmd = parts[0]
 
     if cmd == "ls":
-        print("\n".join(vfs.list_files()))
-        
+        return "\n".join(vfs.list_files())
+
     elif cmd == "cd":
         if parts[1] == '..' and vfs.current_path == vfs.fs_path:
-            print("You cannot exit the archive directory.")
-            return
+            return "You cannot exit the archive directory."
         if len(parts) > 1:
-            vfs.change_directory(parts[1])
+            output = vfs.change_directory(parts[1])
+            if output:
+                return output
+            else:
+                return f"Changed directory to {vfs.current_path}"
         else:
-            print("cd: missing operand")
+            return "cd: missing operand"
+
     elif cmd == "quit":
         vfs.execute_quit()
+        return "Goodbye!"
+
     elif cmd == "uname":
-        vfs.execute_uname()
+        uname_output = []
+        uname_output.append(f"System: {platform.system()}")
+        uname_output.append(f"Release: {platform.release()}")
+        uname_output.append(f"Version: {platform.version()}")
+        uname_output.append(f"Machine: {platform.machine()}")
+        uname_output.append(f"Processor: {platform.processor()}")
+        return "\n".join(uname_output)
+
     elif cmd == "rmdir":
         if len(parts) < 2:
-            print("Usage: rmdir <directory>")
+            return "Usage: rmdir <directory>"
         else:
-            vfs.execute_rmdir(vfs, parts[1])
+            output = vfs.execute_rmdir(vfs, parts[1])
+            if output:
+                return output
+            else:
+                return f"Removed directory {parts[1]}"
+
     else:
-        print(f"{cmd}: command not found")
+        return f"{cmd}: command not found"
