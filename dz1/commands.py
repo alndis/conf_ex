@@ -1,3 +1,4 @@
+import platform
 def execute_command(vfs, command):
     parts = command.split()
     cmd = parts[0]
@@ -22,13 +23,7 @@ def execute_command(vfs, command):
         return "Goodbye!"
 
     elif cmd == "uname":
-        uname_output = []
-        uname_output.append(f"System: {platform.system()}")
-        uname_output.append(f"Release: {platform.release()}")
-        uname_output.append(f"Version: {platform.version()}")
-        uname_output.append(f"Machine: {platform.machine()}")
-        uname_output.append(f"Processor: {platform.processor()}")
-        return "\n".join(uname_output)
+        return vfs.execute_uname()
 
     elif cmd == "rmdir":
         if len(parts) < 2:
