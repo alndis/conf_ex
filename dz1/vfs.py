@@ -43,10 +43,10 @@ class VFS:
 
     def execute_rmdir(self, vfs, path):
         try:
-            os.rmdir(os.path.join(vfs.current_path, path))
             with open(self.log_file, 'a', newline='') as csvfile:
                 log_writer = csv.writer(csvfile)
                 log_writer.writerow([f"rmdir {path}", self.current_path])
+            os.rmdir(os.path.join(vfs.current_path, path))
             return None
         except FileNotFoundError:
             return f"Directory '{path}' not found"
@@ -64,12 +64,15 @@ class VFS:
         exit(0)
 
     def execute_uname(self):
-        print(f"System: {platform.system()}")
-        print(f"Release: {platform.release()}")
-        print(f"Version: {platform.version()}")
-        print(f"Machine: {platform.machine()}")
-        print(f"Processor: {platform.processor()}")
         with open(self.log_file, 'a', newline='') as csvfile:
             log_writer = csv.writer(csvfile)
             log_writer.writerow([f"uname"])
+        output = []
+        output.append(f"System: {platform.system()}")
+        output.append(f"Release: {platform.release()}")
+        output.append(f"Version: {platform.version()}")
+        output.append(f"Machine: {platform.machine()}")
+        output.append(f"Processor: {platform.processor()}")
+        return "\n".join(output)
+
 
