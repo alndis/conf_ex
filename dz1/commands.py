@@ -4,9 +4,13 @@ def execute_command(vfs, command):
     cmd = parts[0]
 
     if cmd == "ls":
+        if len(parts)!=1:
+            return "Uncorrect syntax"
         return "\n".join(vfs.list_files())
 
     elif cmd == "cd":
+        if len(parts)==1:
+            return "No info about directory"
         if parts[1] == '..' and vfs.current_path == vfs.fs_path:
             return "You cannot exit the archive directory."
         if len(parts) > 1:
@@ -19,10 +23,14 @@ def execute_command(vfs, command):
             return "cd: missing operand"
 
     elif cmd == "quit":
+        if len(parts)!=1:
+            return "Uncorrect syntax"
         vfs.execute_quit()
         return "Goodbye!"
 
     elif cmd == "uname":
+        if len(parts)!=1:
+            return "Uncorrect syntax"
         return vfs.execute_uname()
 
     elif cmd == "rmdir":
