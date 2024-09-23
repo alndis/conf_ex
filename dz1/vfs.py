@@ -6,12 +6,13 @@ import platform
 
 class VFS:
     def __init__(self, zip_path):
-        self.fs_path = '/alndis/vfs'
+        self.fs_path = r'\alndis\vfs'
         self.extract_zip(zip_path)
         self.current_path = self.fs_path
         self.log_file = 'vfs_log.csv'
 
     def extract_zip(self, zip_path):
+        print(zip_path)
         with zipfile.ZipFile(zip_path, 'r') as zip:
             zip.extractall(self.fs_path)
 
@@ -21,6 +22,7 @@ class VFS:
             log_writer.writerow([f"ls"])
         return os.listdir(self.current_path)
 
+
     def change_directory(self, path):
         if path == '~':
             self.current_path = self.fs_path
@@ -28,8 +30,11 @@ class VFS:
             self.current_path = self.fs_path
         elif path == '..':
             parent_path = os.path.dirname(self.current_path)
-            if parent_path != self.current_path and parent_path != self.fs_path:
-                self.current_path = parent_path
+            self.current_path = parent_path
+        elif path.count('.')>2:
+            return f"cd: no such file or directory: {path}"
+        elif path[0]=='/' and len(path)>1:
+            return f"cd: no such file or directory: {path}"
         else:
             new_path = os.path.normpath(os.path.join(self.current_path, path))
             if os.path.isdir(new_path):
