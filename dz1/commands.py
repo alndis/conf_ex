@@ -1,5 +1,7 @@
 import platform
 def execute_command(vfs, command):
+    if len(command.strip())==0:
+        command="_ "
     parts = command.split()
     cmd = parts[0]
 
@@ -11,8 +13,9 @@ def execute_command(vfs, command):
     elif cmd == "cd":
         if len(parts)==1:
             return "No info about directory"
-        if parts[1] == '..' and vfs.current_path == vfs.fs_path:
-            return "You cannot exit the archive directory."
+        if parts[1] == '..':
+            if vfs.current_path == vfs.fs_path:
+                return "You cannot exit the archive directory."
         if len(parts) > 1:
             output = vfs.change_directory(parts[1])
             if output:
@@ -26,7 +29,7 @@ def execute_command(vfs, command):
         if len(parts)!=1:
             return "Uncorrect syntax"
         vfs.execute_quit()
-        return "Goodbye!"
+
 
     elif cmd == "uname":
         if len(parts)!=1:
