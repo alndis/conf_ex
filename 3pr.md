@@ -57,6 +57,7 @@ for i in range(10):
 
 ```
 Результат запуска:
+
 ![image](https://github.com/user-attachments/assets/41050778-b0c9-4f5e-a277-48ba0fb9c5dc)
 # Задание №4
 ```bash
@@ -88,7 +89,8 @@ for i in range(10):
     if phrase:
         print(phrase.replace('"', ''))
 ```
-Результат выполнения
+Результат выполнения:
+
 ![image](https://github.com/user-attachments/assets/df30775b-76a0-4d9f-b272-310267c81c5f)
 
 # Задание №5
@@ -157,5 +159,6 @@ for i in range(10):
             print(formatted_phrase.replace('"', ''))
 ```
 Результат:
+
 ![image](https://github.com/user-attachments/assets/ecd5a849-89b1-4e0f-b561-0b4300ba501d)
 
