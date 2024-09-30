@@ -8,6 +8,7 @@ pacman -S mingw-w64-x86_64-python-jsonnet
 jsonnet Ex1.jsonnet -o Ex1jn.json
 ```
 Содержимое файла json (Ex1jn.json)
+
 ![image](https://github.com/user-attachments/assets/b141e4b1-ae51-45cf-addd-b8fa001d9416)
 
 # Задание №2
@@ -22,6 +23,7 @@ dhall --output json --file Pr32.dhall > Pr3_2d.json
 ```
 
 Содержимое файла json (Pe2_2.json)
+
 ![image](https://github.com/user-attachments/assets/9dda3ea5-8964-4375-8d6d-77ac3e7227ef)
 
 # Задание №3
