@@ -12,14 +12,17 @@ jsonnet Ex1.jsonnet -o Ex1jn.json
 
 # Задание №2
 Установим dhall
-```bash
+```
+![image](https://github.com/user-attachments/assets/706e2eb4-d0cf-4e45-a100-6dec459ddf38)
 
 ```
 Создадим файл Ex2.dhall, запишем в него код из задания. Скомпилируем файл в Json
 ```bash
-
+dhall --output json --file Pr32.dhall > Pr3_2d.json
 ```
-Слдержимое файла json (Exjn.json)
+
+Содержимое файла json (Pe2_2.json)
+![image](https://github.com/user-attachments/assets/9dda3ea5-8964-4375-8d6d-77ac3e7227ef)
 
 # Задание №3
 Создадим файл Ex3.py и реализуем в нем грамматику языка нулей и единиц
