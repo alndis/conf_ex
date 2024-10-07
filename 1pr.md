@@ -114,4 +114,5 @@ sed -e 's/    /\t/g' "$1" > "$2"
 #!/bin/bash
 find "$1" -type f -empty -name "*.txt"
 ```
-<img width="546" alt="Снимок экрана 2024-09-08" src="https://github.com/alndis/conf_ex/blob/Practice_1/folder_pr1/10.png">
+![image](https://github.com/user-attachments/assets/b4be5ae6-31fb-44c5-b4b8-186b42dbdee8)
+
