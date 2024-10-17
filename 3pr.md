@@ -27,10 +27,10 @@ local Student(age, groupId, name) = {
 {
   groups: groups,
   students: [
-    Student(19, 3, 'Иванов И.И.'),
-    Student(18, 4, 'Петров П.П.'),
-    Student(18, 4, 'Сидоров С.С.'),
-    Student(19, std.length(groups) - 1, 'Бузин Б.А.'),
+    Student(19, 3, 'Сидиков Н.А.'),
+    Student(18, 4, 'Петров В.П.'),
+    Student(18, 4, 'Иванов А.С.'),
+    Student(19, std.length(groups) - 1, 'Путин В.В.'),
   ],
   subject: 'Конфигурационное управление',
 }
@@ -86,10 +86,10 @@ let Student =
 
 in  { groups
     , students =
-      [ Student 19 3 "Иванов И.И."
-      , Student 18 4 "Петров П.П."
-      , Student 18 4 "Сидоров С.С."
-      , Student 19 (Natural/subtract 1 (List/length Text groups)) "Бузин Б.А."
+      [ Student 19 3 "Cидиков Н.А."
+      , Student 18 4 "Петров В.П."
+      , Student 18 4 "Иванов А.С."
+      , Student 19 (Natural/subtract 1 (List/length Text groups)) "Путин В.В."
       ]
     }
 ```
