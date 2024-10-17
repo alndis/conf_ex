@@ -7,7 +7,6 @@ pacman -S mingw-w64-x86_64-python-jsonnet
 ```bash
 jsonnet Ex1.jsonnet -o Ex1jn.json
 ```
-Содержимое файла json (Ex1jn.json)
 
 ```
 local Group(digits) = 'ИКБО-' + digits;
@@ -36,6 +35,7 @@ local Student(age, groupId, name) = {
   subject: 'Конфигурационное управление',
 }
 ```
+Содержимое файла json (Ex1jn.json)
 
 ![image](https://github.com/user-attachments/assets/b141e4b1-ae51-45cf-addd-b8fa001d9416)
 
