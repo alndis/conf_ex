@@ -37,14 +37,11 @@ local Student(age, groupId, name) = {
 ```
 Содержимое файла json (Ex1jn.json)
 
-![image](https://github.com/user-attachments/assets/42e10f27-d537-43ec-bee3-e57d9ea3fb63)
+![image](https://github.com/user-attachments/assets/67f6e9a6-62fa-4aad-be51-ac425df9416c)
+
 
 # Задание №2
-Установим dhall
-```
-![image](https://github.com/user-attachments/assets/706e2eb4-d0cf-4e45-a100-6dec459ddf38)
 
-```
 Создадим файл Ex2.dhall, запишем в него код из задания. Скомпилируем файл в Json
 ```bash
 dhall --output json --file Pr32.dhall > Pr3_2d.json
