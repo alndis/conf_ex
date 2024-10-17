@@ -37,7 +37,7 @@ local Student(age, groupId, name) = {
 ```
 Содержимое файла json (Ex1jn.json)
 
-![image](https://github.com/user-attachments/assets/b141e4b1-ae51-45cf-addd-b8fa001d9416)
+![image](https://github.com/user-attachments/assets/42e10f27-d537-43ec-bee3-e57d9ea3fb63)
 
 # Задание №2
 Установим dhall
