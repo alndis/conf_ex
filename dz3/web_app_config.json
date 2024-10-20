@@ -1,0 +1,12 @@
+{
+    "APP_NAME": "MyWebApp",
+    "VERSION": 1.2,
+    "DATABASE": {
+        "HOST": "localhost",
+        "PORT": 5432,
+        "USERNAME": "admin",
+        "PASSWORD": "password"
+    },
+    "DEBUG": true,
+    "LOG_LEVEL": "info"
+}

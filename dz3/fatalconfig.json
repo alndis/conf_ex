@@ -1,0 +1,8 @@
+{
+    "app_name": "MyApplication", 
+    "VERSION": 1.0,
+    "SETTINGS": {
+        "DEBUG": true,
+        "LOG_LEVEL": "info"
+    }
+}

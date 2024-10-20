@@ -1,0 +1,15 @@
+{
+    "PROJECT_NAME": "NewProject",
+    "VERSION": 0.1,
+    "TEAM_MEMBERS": [
+        "Alice",
+        "Bob",
+        "Charlie"
+    ],
+    "TASKS": {
+        "TOTAL": 10,
+        "COMPLETED": 4,
+        "PENDING": 6
+    },
+    "ENABLE_NOTIFICATIONS": false
+}

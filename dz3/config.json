@@ -1,0 +1,8 @@
+{
+    "PROJECT_NAME": "NewProject",
+    "VERSION": 0.1,
+    "CONST_SUM": "? 3 + 5",
+    "CONST_PI": 3.14,
+    "CONST_SQRT_TWO": "sqrt 2",
+    "ENABLE_NOTIFICATIONS": false
+}
