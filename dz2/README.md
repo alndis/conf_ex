@@ -49,7 +49,7 @@ package_name: 'matplotlib'
 
 В формате png:
 
-![alt text](graph.png)
+![alt text](image-2.png)
 
 ## Тестирование
 

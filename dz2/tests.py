@@ -61,10 +61,14 @@ matplotlib==3.6.3
     def test_visualize_graph(self):
         dependencies = read_dependencies(self.dependencies_file)
         output = visualize_graph('matplotlib', dependencies)
+        
+        # Проверяем, что вывод содержит "graph TD"
         self.assertIn("graph TD", output)
-        self.assertIn("matplotlib --> numpy", output)
-        for dep in ['contourpy', 'cycler', 'kiwisolver', 'pillow', 'pyparsing', 'packaging', 'wheel', 'python']:
+        
+        # Проверяем, что зависимости включены в вывод
+        for dep in ['numpy', 'contourpy', 'cycler', 'kiwisolver', 'pillow', 'pyparsing', 'packaging', 'wheel', 'python']:
             self.assertIn(f"matplotlib --> {dep}", output)
+
 
     def tearDown(self):
         import os

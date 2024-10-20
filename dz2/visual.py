@@ -61,8 +61,9 @@ def visualize_graph(package_name, dependencies):
     # Используем Mermaid CLI для генерации изображения
     os.system("mmdc -i graph.mmd -o graph.png")
 
-    # Выводим граф в формате Mermaid
-    print(mermaid_code)
+    # Возвращаем граф в формате Mermaid
+    return mermaid_code  # Вернем сгенерированный граф
+
 
 # Основная функция запуска
 def main():
