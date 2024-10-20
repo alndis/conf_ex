@@ -46,12 +46,12 @@ def visualize_graph(package_name, dependencies):
     transitive_deps = get_transitive_dependencies(package_name, dependencies)
     graph_lines = ["graph TD"]  # Начинаем с заголовка для Mermaid
 
-    # Добавляем начальный пакет и его зависимости
+    # Добавляем начальный пакет
     for dep in transitive_deps:
         graph_lines.append(f"    {package_name} --> {dep}")
 
-    # Возвращаем граф в виде строки
-    return "\n".join(graph_lines)
+    # Выводим граф в формате Mermaid
+    print("\n".join(graph_lines))
 
 # Основная функция запуска
 def main():
@@ -62,8 +62,7 @@ def main():
     dependencies = read_dependencies('dependencies.txt')
 
     # Визуализируем граф
-    graph_output = visualize_graph(package_name, dependencies)
-    print(graph_output)
+    visualize_graph(package_name, dependencies)
 
 if __name__ == "__main__":
     main()
