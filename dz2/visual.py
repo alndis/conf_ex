@@ -1,4 +1,5 @@
 import yaml
+import os
 from collections import defaultdict
 
 # Чтение конфигурационного файла
@@ -46,12 +47,22 @@ def visualize_graph(package_name, dependencies):
     transitive_deps = get_transitive_dependencies(package_name, dependencies)
     graph_lines = ["graph TD"]  # Начинаем с заголовка для Mermaid
 
-    # Добавляем начальный пакет и его зависимости
+    # Добавляем зависимости
     for dep in transitive_deps:
         graph_lines.append(f"    {package_name} --> {dep}")
 
-    # Возвращаем граф в виде строки
-    return "\n".join(graph_lines)
+    # Генерируем текст в формате Mermaid
+    mermaid_code = "\n".join(graph_lines)
+
+    # Сохраняем в файл
+    with open("graph.mmd", "w") as f:
+        f.write(mermaid_code)
+
+    # Используем Mermaid CLI для генерации изображения
+    os.system("mmdc -i graph.mmd -o graph.png")
+
+    # Выводим граф в формате Mermaid
+    print(mermaid_code)
 
 # Основная функция запуска
 def main():
