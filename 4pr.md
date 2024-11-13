@@ -1,244 +1,303 @@
-## Задание 0
+# Задание 1
 
-Изучить основы языка утилиты make. Распаковать в созданный каталог make.zip, если у вас в в системе нет make.
+```
+git commit
+git tag in
+git branch first
+git branch second
+git commit
+git commit
+git checkout first
+git commit
+git commit
+git checkout master
+git merge first
+git checkout second
+git commit
+git commit
+git rebase master
+git checkout master
+git merge second
+git checkout in
+```
 
-Создать приведенный ниже Makefile и проверить его работоспособность.
+![image](https://github.com/user-attachments/assets/47eb1c49-739f-415b-90d3-7c2d6fbc6c6f)
 
-![image](https://github.com/user-attachments/assets/ce081927-1ee4-488d-bcd0-27fdb0eef9fe)
+# Задание 2
 
-## Визуализировать граф civgraph.txt.
+```
+123@DESKTOP-0TAHG33 MINGW64 ~/Downloads/4pr
+$ git init
+Initialized empty Git repository in C:/Users/123/Downloads/4pr/.git/
 
-Скрипт на Python:
+123@DESKTOP-0TAHG33 MINGW64 ~/Downloads/4pr (master)
+$ git config user.name "alndis"
+
+123@DESKTOP-0TAHG33 MINGW64 ~/Downloads/4pr (master)
+$ git config user.email "alndis@gmail.com"
+
+123@DESKTOP-0TAHG33 MINGW64 ~/Downloads/4pr (master)
+$ micro prog.py
+bash: micro: command not found
+
+123@DESKTOP-0TAHG33 MINGW64 ~/Downloads/4pr (master)
+$ nano prog.py
+
+123@DESKTOP-0TAHG33 MINGW64 ~/Downloads/4pr (master)
+$ cat prog.py
+test datas
+
+
+123@DESKTOP-0TAHG33 MINGW64 ~/Downloads/4pr (master)
+$ git add .
+warning: in the working copy of 'prog.py', LF will be replaced by CRLF the next time Git touches it
+
+123@DESKTOP-0TAHG33 MINGW64 ~/Downloads/4pr (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   prog.py
+
+
+123@DESKTOP-0TAHG33 MINGW64 ~/Downloads/4pr (master)
+$ git commit -m "test commit"
+[master (root-commit) 3c480e9] test commit
+ 1 file changed, 2 insertions(+)
+ create mode 100644 prog.py
+
+123@DESKTOP-0TAHG33 MINGW64 ~/Downloads/4pr (master)
+$ git log --oneline
+3c480e9 (HEAD -> master) test commit
+```
+
+# Задание 3
+
+```
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr/coder1
+$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+Initialized empty Git repository in /home/123/4pr/coder1/.git/
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr/coder1
+$ git config user.name "Coder1"
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr/coder1
+$ git config user.email "Coder1@ex.com"
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr/coder1
+$ echo "test message" > prog.py
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr/coder1
+$ git add .
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr/coder1
+$ git commit -m 'add coder1'
+[master (root-commit) fce76ee] add coder1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 prog.py
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr/coder1
+$ cd ..
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr
+$ git init --bare server.git
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+Initialized empty Git repository in /home/123/4pr/server.git/
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr
+$ cd coder1
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr/coder1
+$ git remote add server ../server.git
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr/coder1
+$ git remote -v
+server  ../server.git (fetch)
+server  ../server.git (push)
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr/coder1
+$ git push server master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 213 bytes | 106.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To ../server.git
+ * [new branch]      master -> master
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr/coder1
+$ cd ..
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr
+$ git clone server.git coder2
+Cloning into 'coder2'...
+done.
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr
+$ cd coder1
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr/coder1
+$ echo "info PROG1" >> readme.md
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr/coder1
+$ git add .
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr/coder1
+$ git commit -m 'coder1 info'
+[master 476fbb1] coder1 info
+ 1 file changed, 1 insertion(+)
+ create mode 100644 readme.md
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr/coder1
+$ git push server master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 274 bytes | 91.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To ../server.git
+   fce76ee..476fbb1  master -> master
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr/coder1
+$ cd ../coder2
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr/coder2
+$ echo "info PROG2" >> readme.md
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr/coder2
+$ git add .
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr/coder2
+$ git config user.name "coder2"
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr/coder2
+$ git config user.email "coder2@ex.ru"
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr/coder2
+$ git commit -m 'coder2 info'
+[master d0a3819] coder2 info
+ 1 file changed, 1 insertion(+)
+ create mode 100644 readme.md
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr/coder2
+$ git push origin master
+To /home/123/4pr/server.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to '/home/123/4pr/server.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr/coder2
+$ git pull --no-rebase origin master
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 254 bytes | 6.00 KiB/s, done.
+From /home/123/4pr/server
+ * branch            master     -> FETCH_HEAD
+   fce76ee..476fbb1  master     -> origin/master
+Auto-merging readme.md
+CONFLICT (add/add): Merge conflict in readme.md
+Automatic merge failed; fix conflicts and then commit the result.
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr/coder2
+$ git add .
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr/coder2
+$ git commit -m 'fixed read'
+[master 207b16c] fixed read
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr/coder2
+$ git push origin master
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 598 bytes | 149.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To /home/123/4pr/server.git
+   476fbb1..207b16c  master -> master
+
+123@DESKTOP-0TAHG33 MINGW64 ~/4pr/coder2
+$ git log --graph --all
+*   commit 207b16c85c42897708e798a9f74ef87648793237 (HEAD -> master, origin/master, origin/HEAD)
+|\  Merge: d0a3819 476fbb1
+| | Author: coder2 <coder2@ex.ru>
+| | Date:   Wed Nov 6 14:35:14 2024 +0300
+| |
+| |     fixed read
+| |
+| * commit 476fbb165fea756c9b69c63b486b2611e7264b84
+| | Author: Coder1 <Coder1@ex.com>
+| | Date:   Wed Nov 6 14:33:16 2024 +0300
+| |
+| |     coder1 info
+| |
+* | commit d0a381957d43e31fd5b01a1f5b6a84ce8738dba6
+|/  Author: coder2 <coder2@ex.ru>
+|   Date:   Wed Nov 6 14:34:22 2024 +0300
+|
+|       coder2 info
+|
+* commit fce76ee7c02475c502390437a7f0cfe95cc27244
+  Author: Coder1 <Coder1@ex.com>
+:
+```
+
+![image](https://github.com/user-attachments/assets/4b75e4ad-92bc-49e9-bc59-32ce5e21e61a)
+
+# Задание 4
 
 ```py
-from graphviz import Source
+import subprocess
 
-file_path = 'civgraph.txt'
+def get_git_objects():
+    objects = subprocess.check_output(['git', 'rev-list', '--all', '--objects'], text=True).splitlines()
+    return objects
 
-with open(file_path, 'r') as f:
-    dot_data = f.read()
+def display_object_content(objects):
+    for obj in objects:
+        obj_hash = obj.split()[0]
+        try:
+            content = subprocess.check_output(['git', 'cat-file', '-p', obj_hash], text=True)
+            print(f"Object Hash: {obj_hash}")
+            print(content)
+            print("-" * 40)
+        except subprocess.CalledProcessError as e:
+            print(f"Error processing object {obj_hash}: {e}")
 
-src = Source(dot_data)
-src.render('civgraph', format='png')
+def main():
+    objects = get_git_objects()
+    display_object_content(objects)
+
+if __name__ == "__main__":
+    main()
 ```
 
-Файл Makefile:
-
-```bash
-run:
-        python3 gr0.py
-```
-
-![image](https://github.com/user-attachments/assets/c29f7b5b-74e4-47fd-b6b4-2aecd0b045c4)
-
-![image](https://github.com/user-attachments/assets/83300fb3-9f61-43be-8ac0-a104bd4720bc)
-
-## Задание 1
-
-Файл gr1.py:
-
-```py
-import json
-
-def generate_makefile(graph):
-    with open('Makefile', 'w') as f:
-        for target, deps in graph.items():
-            deps_str = ' '.join(deps)
-            f.write(f'{target}: {deps_str}\n')
-            f.write(f'\t@echo "Building {target}"\n\n')
-
-if __name__ == '__main__':
-    with open('civgraph.json') as file:
-        graph = json.load(file)
-    generate_makefile(graph)
-    print("Makefile создан.")
-```
-Файл civgraph.json:
-```json
-{"pottery": [], "irrigation": ["pottery"], "writing": ["pottery"], "animal_husbandry": [], "archery": ["animal_husbandry"], "mining": [], "masonry": ["mining"], "bronze_working": ["mining"], "the_wheel": ["mining"], "apprenticeship": ["mining", "currency", "horseback_riding"], "sailing": [], "celestial_navigation": ["sailing", "astrology"], "shipbuilding": ["sailing"], "astrology": [], "drama_poetry": ["astrology", "irrigation", "masonry", "early_empire", "mysticism"], "theology": ["astrology", "mysticism", "drama_poetry"], "horseback_riding": ["archery"], "machinery": ["archery", "iron_working", "engineering"], "currency": ["writing", "foreign_trade"], "state_workforce": ["writing", "bronze_working", "craftsmanship"], "recorded_history": ["writing", "political_philosophy", "drama_poetry"], "construction": ["masonry", "the_wheel", "horseback_riding"], "engineering": ["masonry", "the_wheel"], "iron_working": ["bronze_working"], "mathematics": ["bronze_working", "celestial_navigation", "currency", "drama_poetry"], "military_training": ["bronze_working", "military_tradition", "games_recreation"], "cartography": ["celestial_navigation", "shipbuilding"], "medieval_faires": ["currency", "feudalism"], "guilds": ["currency", "feudalism", "civil_service"], "mercantilism": ["currency", "humanism"], "stirrups": ["horseback_riding", "feudalism"], "mass_production": ["shipbuilding", "machinery", "education"], "naval_tradition": ["shipbuilding", "defensive_tactics"], "military_tactics": ["mathematics"], "education": ["mathematics", "apprenticeship"], "military_engineering": ["construction", "engineering"], "castles": ["construction", "divine_right", "exploration"], "games_recreation": ["construction", "state_workforce"], "gunpowder": ["apprenticeship", "stirrups", "military_engineering"], "printing": ["machinery", "education"], "metal_casting": ["machinery", "gunpowder"], "banking": ["education", "stirrups", "guilds"], "astronomy": ["education"], "military_science": ["stirrups", "printing", "siege_tactics"], "siege_tactics": ["castles", "metal_casting"], "square_rigging": ["cartography", "gunpowder"], "exploration": ["cartography", "mercenaries", "medieval_faires"], "industrialization": ["mass_production", "square_rigging"], "scientific_theory": ["banking", "astronomy", "the_enlightenment"], "colonialism": ["astronomy", "mercantilism"], "ballistics": ["metal_casting", "siege_tactics"], "economics": ["metal_casting", "scientific_theory"], "scorched_earth": ["metal_casting", "nationalism"], "steam_power": ["industrialization"], "flight": ["industrialization", "scientific_theory", "economics"], "steel": ["industrialization", "rifling"], "class_struggle": ["industrialization", "ideology"], "sanitation": ["scientific_theory", "urbanization"], "rifling": ["ballistics", "military_science"], "totalitarianism": ["military_science", "ideology"], "electricity": ["steam_power", "mercantilism"], "radio": ["steam_power", "flight", "conservation"], "chemistry": ["sanitation"], "suffrage": ["sanitation", "ideology"], "replaceable_parts": ["economics"], "capitalism": ["economics", "mass_media"], "combined_arms": ["flight", "combustion"], "synthetic_materials": ["flight", "plastics"], "rapid_deployment": ["flight", "cold_war"], "advanced_ballistics": ["replaceable_parts", "steel", "electricity"], "combustion": ["steel", "natural_history"], "computers": ["electricity", "radio", "suffrage", "totalitarianism", "class_struggle"], "advanced_flight": ["radio"], "rocketry": ["radio", "chemistry"], "nanotechnology": ["radio", "composites"], "mass_media": ["radio", "urbanization"], "nuclear_program": ["chemistry", "ideology"], "plastics": ["combustion"], "satellites": ["advanced_flight", "rocketry"], "globalization": ["advanced_flight", "rapid_deployment", "space_race"], "guidance_systems": ["rocketry", "advanced_ballistics"], "space_race": ["rocketry", "cold_war"], "nuclear_fission": ["advanced_ballistics", "combined_arms"], "telecommunications": ["computers"], "robotics": ["computers", "globalization"], "lasers": ["nuclear_fission"], "cold_war": ["nuclear_fission", "ideology"], "composites": ["synthetic_materials"], "stealth_technology": ["synthetic_materials"], "social_media": ["telecommunications", "professional_sports", "space_race"], "nuclear_fusion": ["lasers"], "code_of_laws": [], "craftsmanship": ["code_of_laws"], "foreign_trade": ["code_of_laws"], "military_tradition": ["craftsmanship"], "early_empire": ["foreign_trade"], "mysticism": ["foreign_trade"], "political_philosophy": ["state_workforce", "early_empire"], "defensive_tactics": ["games_recreation", "political_philosophy"], "humanism": ["drama_poetry", "medieval_faires"], "mercenaries": ["military_training", "feudalism"], "feudalism": ["defensive_tactics"], "civil_service": ["defensive_tactics", "recorded_history"], "divine_right": ["theology", "civil_service"], "diplomatic_service": ["guilds"], "reformed_church": ["guilds", "divine_right"], "the_enlightenment": ["humanism", "diplomatic_service"], "civil_engineering": ["mercantilism"], "nationalism": ["the_enlightenment"], "opera_ballet": ["the_enlightenment"], "natural_history": ["colonialism"], "urbanization": ["civil_engineering", "nationalism"], "conservation": ["natural_history", "urbanization"], "mobilization": ["urbanization"], "cultural_heritage": ["conservation"], "ideology": ["mass_media", "mobilization"], "professional_sports": ["ideology"]}
-```
-![image](https://github.com/user-attachments/assets/ce81f3e7-65d6-4a75-b240-517f1469cb64)
-
-![image](https://github.com/user-attachments/assets/af502e24-1ee6-41ef-868a-b8ff78e74e1e)
-
-## Задание 2
-
-Файл ex3.py:
-
-```py
-import json
-import os
-
-completed_tasks_file = "task.txt"
-
-def get_all_depends(graph, targetTech):
-    depends = set(graph[targetTech])
-    for depend in graph[targetTech]:
-        for i in get_all_depends(graph, depend):
-            depends.add(i)
-    return depends
-
-
-def generate_makefile(graph, targetTech):
-    tasks = load_tasks()
-    depends = get_all_depends(graph, targetTech)
-    tasks.add(targetTech)
-    with open('Makefile', 'w') as f:
-        result_string = ""
-        for target in depends:
-            if target not in tasks:
-                tasks.add(target)
-                result_string += f'\t@echo "Building {target}"\n'
-        if result_string != "":
-            f.write(f'{target}:\n')
-            f.write(result_string)
-    save_tasks(tasks)
-
-def load_tasks():
-    if os.path.exists(completed_tasks_file):
-        with open(completed_tasks_file, 'r') as f:
-            return set(f.read().splitlines())
-    return set()
-
-def save_tasks(tasks):
-    with open(completed_tasks_file, 'w') as f:
-        f.write('\n'.join(tasks))
-
-if __name__ == '__main__':
-    with open('civgraph.json') as file:
-        graph = json.load(file)
-    target = input('Enter target: ')
-    generate_makefile(graph, target)
-    print("Makefile создан.")
-```
-
-![image](https://github.com/user-attachments/assets/096a79b4-0221-4d2d-a63b-05ca771fdd8a)
-
-## Задание 3
-
-Файл ex3.py:
-
-```py
-import json
-import os
-
-completed_tasks_file = "task.txt"
-
-def get_all_depends(graph, targetTech):
-    depends = set(graph[targetTech])
-    for depend in graph[targetTech]:
-        for i in get_all_depends(graph, depend):
-            depends.add(i)
-    return depends
-
-
-def generate_makefile(graph, targetTech):
-    tasks = load_tasks()
-    depends = get_all_depends(graph, targetTech)
-    tasks.add(targetTech)
-    with open('Makefile', 'w') as f:
-        result_string = ""
-        for target in depends:
-            if target not in tasks:
-                tasks.add(target)
-                result_string += f'\t@echo "Building {target}"\n'
-        if result_string != "":
-            f.write(f'{target}:\n')
-            f.write(result_string)
-    save_tasks(tasks)
-
-def load_tasks():
-    if os.path.exists(completed_tasks_file):
-        with open(completed_tasks_file, 'r') as f:
-            return set(f.read().splitlines())
-    return set()
-
-def save_tasks(tasks):
-    with open(completed_tasks_file, 'w') as f:
-        f.write('\n'.join(tasks))
-
-def clean():
-    if os.path.exists(completed_tasks_file):
-        os.remove(completed_tasks_file)
-        print("Cleaned completed tasks.")
-
-if __name__ == '__main__':
-    with open('civgraph.json') as file:
-        graph = json.load(file)
-    target = input('Enter target: ')
-    if target == "clean":
-        clean()
-    else:
-        generate_makefile(graph, target)
-        print("Makefile создан.")
-```
-
-![image](https://github.com/user-attachments/assets/b743e370-af7f-4c86-8b8a-104fbb2aa44d)
-
-## Задание 4
-
-Файл prog.c:
-
-```c
-#include <stdio.h>
-#include "data.h"
-
-int main() {
-    printf("Hello, World!\n");
-    print_data();
-    return 0;
-}
-```
-
-Файл data.c:
-
-```c
-#include <stdio.h>
-
-void print_data() {
-    printf("This is data from data.c\n");
-}
-```
-
-Файл data.h:
-
-```c
-#ifndef DATA_H
-#define DATA_H
-
-void print_data();
-
-#endif
-```
-
-Файл Makefile:
-
-```
-CC = gcc
-
-TARGET = prog
-
-SOURCES = prog.c data.c
-OBJECTS = $(SOURCES:.c=.o)
-
-all: $(TARGET) files.lst archive
-
-$(TARGET): $(OBJECTS)
-	$(CC) $(OBJECTS) -o $@
-
-files.lst:
-	ls > files.lst
-
-archive: files.lst
-	zip distr.zip *.*
-
-%.o: %.c
-	$(CC) -c $< -o $@
-
-clean:
-	rm -f $(TARGET) $(OBJECTS) files.lst distr.zip
-```
-![image](https://github.com/user-attachments/assets/e3b40522-1a41-4f8a-a41e-21c44f3843c9)
-
-
-
+![image](https://github.com/user-attachments/assets/0818d172-b509-481b-a4f7-8826362a1f2e)

@@ -67,7 +67,7 @@ python config_tool.py <путь_к_json_файлу>
 ```
 ### Вывод программы
 
-![alt text](/imgs/image-3.png)
+![alt text](./imgs/image-3.png)
 
 ### Пример входного JSON для веб-приложения
 ```json
@@ -87,7 +87,7 @@ python config_tool.py <путь_к_json_файлу>
 ```
 ### Вывод программы
 
-![alt text](/imgs/image-4.png)
+![alt text](./imgs/image-4.png)
 
 ## Тестирование
 
@@ -96,4 +96,5 @@ python config_tool.py <путь_к_json_файлу>
 python -m unittest tests.py
 ```
 При успешном запуске тестов вы должны увидеть следущее:
+
 ![alt text](./imgs/image.png)
