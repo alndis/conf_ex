@@ -1,0 +1,262 @@
+[
+    {
+        "command": "LOAD_CONSTANT",
+        "args": [
+            10,
+            0
+        ],
+        "binary": "3a0a0000000000"
+    },
+    {
+        "command": "LOAD_CONSTANT",
+        "args": [
+            11,
+            1
+        ],
+        "binary": "3a0b0001000000"
+    },
+    {
+        "command": "LOAD_CONSTANT",
+        "args": [
+            12,
+            2
+        ],
+        "binary": "3a0c0002000000"
+    },
+    {
+        "command": "LOAD_CONSTANT",
+        "args": [
+            13,
+            3
+        ],
+        "binary": "3a0d0003000000"
+    },
+    {
+        "command": "LOAD_CONSTANT",
+        "args": [
+            14,
+            4
+        ],
+        "binary": "3a0e0004000000"
+    },
+    {
+        "command": "WRITE_MEMORY",
+        "args": [
+            0,
+            100,
+            0
+        ],
+        "binary": "1e00640000"
+    },
+    {
+        "command": "WRITE_MEMORY",
+        "args": [
+            1,
+            100,
+            1
+        ],
+        "binary": "1e01640100"
+    },
+    {
+        "command": "WRITE_MEMORY",
+        "args": [
+            2,
+            100,
+            2
+        ],
+        "binary": "1e02640200"
+    },
+    {
+        "command": "WRITE_MEMORY",
+        "args": [
+            3,
+            100,
+            3
+        ],
+        "binary": "1e03640300"
+    },
+    {
+        "command": "WRITE_MEMORY",
+        "args": [
+            4,
+            100,
+            4
+        ],
+        "binary": "1e04640400"
+    },
+    {
+        "command": "LOAD_CONSTANT",
+        "args": [
+            105,
+            10
+        ],
+        "binary": "3a69000a000000"
+    },
+    {
+        "command": "LOAD_CONSTANT",
+        "args": [
+            106,
+            11
+        ],
+        "binary": "3a6a000b000000"
+    },
+    {
+        "command": "LOAD_CONSTANT",
+        "args": [
+            107,
+            12
+        ],
+        "binary": "3a6b000c000000"
+    },
+    {
+        "command": "LOAD_CONSTANT",
+        "args": [
+            108,
+            13
+        ],
+        "binary": "3a6c000d000000"
+    },
+    {
+        "command": "LOAD_CONSTANT",
+        "args": [
+            109,
+            14
+        ],
+        "binary": "3a6d000e000000"
+    },
+    {
+        "command": "WRITE_MEMORY",
+        "args": [
+            10,
+            100,
+            10
+        ],
+        "binary": "1e0a640a00"
+    },
+    {
+        "command": "WRITE_MEMORY",
+        "args": [
+            11,
+            100,
+            11
+        ],
+        "binary": "1e0b640b00"
+    },
+    {
+        "command": "WRITE_MEMORY",
+        "args": [
+            12,
+            100,
+            12
+        ],
+        "binary": "1e0c640c00"
+    },
+    {
+        "command": "WRITE_MEMORY",
+        "args": [
+            13,
+            100,
+            13
+        ],
+        "binary": "1e0d640d00"
+    },
+    {
+        "command": "WRITE_MEMORY",
+        "args": [
+            14,
+            100,
+            14
+        ],
+        "binary": "1e0e640e00"
+    },
+    {
+        "command": "READ_MEMORY",
+        "args": [
+            101,
+            0
+        ],
+        "binary": "03650000"
+    },
+    {
+        "command": "READ_MEMORY",
+        "args": [
+            102,
+            1
+        ],
+        "binary": "03660100"
+    },
+    {
+        "command": "READ_MEMORY",
+        "args": [
+            103,
+            2
+        ],
+        "binary": "03670200"
+    },
+    {
+        "command": "READ_MEMORY",
+        "args": [
+            104,
+            3
+        ],
+        "binary": "03680300"
+    },
+    {
+        "command": "READ_MEMORY",
+        "args": [
+            105,
+            4
+        ],
+        "binary": "03690400"
+    },
+    {
+        "command": "BINARY_OR",
+        "args": [
+            101,
+            10,
+            0,
+            100
+        ],
+        "binary": "7c650a0064"
+    },
+    {
+        "command": "BINARY_OR",
+        "args": [
+            102,
+            11,
+            1,
+            100
+        ],
+        "binary": "7c660b0164"
+    },
+    {
+        "command": "BINARY_OR",
+        "args": [
+            103,
+            12,
+            2,
+            100
+        ],
+        "binary": "7c670c0264"
+    },
+    {
+        "command": "BINARY_OR",
+        "args": [
+            104,
+            13,
+            3,
+            100
+        ],
+        "binary": "7c680d0364"
+    },
+    {
+        "command": "BINARY_OR",
+        "args": [
+            105,
+            14,
+            4,
+            100
+        ],
+        "binary": "7c690e0464"
+    }
+]
