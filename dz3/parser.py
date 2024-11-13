@@ -2,10 +2,10 @@ import math
 import json
 import re
 
-def parse_json_to_custom_config(data, indent=0):
+def parse_json_to_custom_config(data, indent=0, comments=None):
     validate_json_structure(data)  # Проверяем структуру JSON
     if isinstance(data, dict):
-        return parse_dict(data, indent)
+        return parse_dict(data, indent, comments)
     elif isinstance(data, list):
         return parse_list(data, indent)
     else:
@@ -14,8 +14,12 @@ def parse_json_to_custom_config(data, indent=0):
 def parse_list(data, indent):
     return ', '.join(f'"{item}"' if isinstance(item, str) else str(item) for item in data)
 
-def parse_dict(data, indent=0):
+def parse_dict(data, indent=0, comments=None):
     config_lines = [" " * indent + "struct {"]
+    if comments:
+        # Добавляем комментарии в начало структуры
+        config_lines.insert(0, "\n".join(comments))
+        
     for key, value in data.items():
         if key.startswith("CONST_"):
             const_name = key[6:]  # Удаляем CONST_ из имени
@@ -84,27 +88,31 @@ def parse_constant_expression(expr):
     else:
         return expr  # Если это просто значение, возвращаем его
 
-def remove_multiline_comments(input_string):
-    # Удаляем многострочные комментарии
-    pattern = r'/\*.*?\*/'
-    return re.sub(pattern, '', input_string, flags=re.DOTALL)
+def extract_and_keep_comments(input_string):
+    # Извлекаем комментарии и форматируем их в /# ... #/
+    pattern = r'/\*(.*?)\*/'
+    comments = [f"/# {comment.strip()} #/" for comment in re.findall(pattern, input_string, flags=re.DOTALL)]
+    cleaned_input = re.sub(pattern, '', input_string, flags=re.DOTALL)
+    return comments, cleaned_input
 
+if __name__ == "__main__":
+    json_input = """
+    /*
+    Это многострочный роир 
+    +_+_++_
+    льд
+    комментарий
+    */
+    {
+        "PROJECT_NAME": "NewProject",
+        "VERSION": 0.1,
+        "CONST_SUM": "? 5 + 5",
+        "ENABLE_NOTIFICATIONS": false
+    }
+    """
+    comments, cleaned_json_input = extract_and_keep_comments(json_input)
+    data = json.loads(cleaned_json_input)
 
-
-# if __name__ == "__main__":
-#     json_input = """
-#     /*
-#     Это многострочный
-#     комментарий
-#     */
-#     {
-#         "PROJECT_NAME": "NewProject",
-#         "VERSION": 0.1,
-#         "CONST_SUM": "? 5 + 5",
-#         "ENABLE_NOTIFICATIONS": false
-#     }
-#     """
-#     cleaned_json_input = remove_multiline_comments(json_input)
-#     data = json.loads(cleaned_json_input)  # Теперь загружаем JSON без комментариев
-#     custom_config = parse_json_to_custom_config(data)
-#     print(custom_config)
+    # Вставляем комментарии перед структурой
+    custom_config = parse_json_to_custom_config(data, indent=0, comments=comments)
+    print(custom_config)
